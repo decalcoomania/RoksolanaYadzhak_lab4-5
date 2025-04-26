@@ -1,5 +1,9 @@
+// src/components/AuthForm.js
 import React, { useState } from 'react';
-import './AuthForm.css'; // Імпортуємо CSS файл для стилів
+import './AuthForm.css';
+import { auth } from '../firebase/firebaseConfig';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import { saveUserData } from '../firebase/firebaseOperations';  // Імпортуємо функцію для збереження даних
 
 const AuthForm = () => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -9,25 +13,42 @@ const AuthForm = () => {
     username: '',
     password: ''
   });
-  const [isOpen, setIsOpen] = useState(true); // Статус відкриття модального вікна
+  const [isOpen, setIsOpen] = useState(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isRegistering) {
-      localStorage.setItem('user', JSON.stringify(formData));
-      alert('Зареєстровано!');
-    } else {
-      const saved = JSON.parse(localStorage.getItem('user'));
-      if (saved && saved.username === formData.username && saved.password === formData.password) {
-        alert('Вхід успішний');
+
+    try {
+      if (isRegistering) {
+        // Реєстрація користувача
+        const userCredential = await createUserWithEmailAndPassword(auth, formData.username, formData.password);
+        const user = userCredential.user;
+
+        // Надсилаємо email для підтвердження
+        await sendEmailVerification(user);
+
+        // Зберігаємо додаткові дані користувача в Firestore
+        const userData = {
+          fullname: formData.fullname,
+          phone: formData.phone,
+          username: formData.username
+        };
+        await saveUserData(userData);
+
+        alert('Реєстрація успішна! Перевірте свою електронну пошту для підтвердження.');
       } else {
-        alert('Неправильний логін або пароль');
+        // Логіка входу
+        await signInWithEmailAndPassword(auth, formData.username, formData.password);
+        alert('Вхід успішний');
       }
+    } catch (error) {
+      console.error(error.message);
+      alert(error.message);
     }
   };
 
   const closeModal = () => {
-    setIsOpen(false); // Закриваємо модальне вікно
+    setIsOpen(false);
   };
 
   return (
@@ -55,9 +76,9 @@ const AuthForm = () => {
             </>
           )}
           <div className="input-group">
-            <label>Логін:</label>
+            <label>Логін (email):</label>
             <input 
-              type="text" 
+              type="email" 
               required 
               onChange={(e) => setFormData({ ...formData, username: e.target.value })} 
             />
