@@ -1,0 +1,176 @@
+/* Головний контейнер профілю */
+.profile-dashboard {
+  font-family: 'Segoe UI', sans-serif; /* Шрифт інтерфейсу */
+  background-color: #0a0a0a;           /* Темне тло сторінки */
+  min-height: 100vh;                   /* Мінімальна висота — весь екран */
+  padding: 40px;                       /* Внутрішні відступи */
+  color: #fff;                         /* Білий колір тексту */
+}
+
+/* Сітка для розташування блоків на сторінці */
+.dashboard-grid {
+  display: grid;                                      /* Включення CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Адаптивна сітка */
+  gap: 20px;                                          /* Відступи між елементами */
+}
+
+/* Ліва панель з аватаром і привітанням */
+.profile-left {
+  width: 280px;                         /* Фіксована ширина */
+  height: 800px;                        /* Висота блоку */
+  padding: 0;
+  position: relative;                  /* Потрібно для абсолютного позиціонування вкладених елементів */
+  overflow: hidden;   
+  margin-top: 80px;  
+  border-radius: 40px;      
+  background-color: #fff;         /* Приховує вихід за межі */
+}
+
+/* Обгортка аватарки та тексту */
+.welcome-avatar-block {
+  position: relative;
+  height: 100%;  /* Займає повну висоту .profile-left */
+  width: 100%;   /* Займає повну ширину .profile-left */
+}
+
+/* Блок з аватаркою як фоном */
+.avatar-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;  /* Вся висота батька */
+  width: 100%;   /* Вся ширина батька */
+  z-index: 1;    /* Позаду welcome-card */
+}
+
+/* Зображення профілю */
+.avatar-img {
+  width: 100%;              /* Повна ширина */
+  height: 100%;             /* Повна висота */
+  object-fit: cover;        /* Зображення обрізається без спотворення */
+  display: block;
+  border-radius: 0; 
+  margin-top: 80px;  
+        /* Без заокруглень */
+}
+
+/* Текст і кнопка поверх аватарки */
+.welcome-card {
+  position: absolute;       /* Поверх картинки */
+  top: 20px;                /* Відступ зверху */
+  z-index: 2;               /* Над аватаркою */
+  width: 100%;
+  text-align: center;
+  color: #000;              /* Чорний текст, для контрасту зі світлою частиною фото */
+  font-weight: bold;
+}
+
+/* Заголовок привітання */
+.welcome-card h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Підзаголовок із завданнями */
+.welcome-card p {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+}
+
+/* Кнопка зміни аватарки */
+.avatar-upload {
+  background-color: #f97316;     /* Помаранчевий фон */
+  color: #fff;                   /* Білий текст */
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: background-color 0.3s;
+  z-index: 3;                    /* Поверх усього */
+  position: relative;
+  margin-top: 650px;
+}
+
+/* Ефект наведення на кнопку */
+.avatar-upload:hover {
+  background-color: #ea580c;     /* Темніший помаранчевий при наведенні */
+}
+/* Секція з графіками */
+/* Секція з графіками */
+.charts-section {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: row;           /* Горизонтальне розташування блоків */
+  flex-wrap: nowrap;             /* Забороняє переноси, якщо немає місця */
+  gap: 20px;
+  margin-top: 80px;
+  margin-left: 40px;
+  justify-content: flex-start;   /* Вирівнювання елементів на ліво */
+  align-items: flex-start;
+  width: 100%;                   /* Забезпечує ширину */
+  padding: 20px;
+}
+
+/* Блоки всередині charts-section */
+.charts-section > .chart-card {
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  flex: 0 1 300px;               /* Мінімальна ширина 300px, але не більше */
+  max-width: 500px;              /* Збільшена максимальна ширина */
+  height: 300px;                 /* Збільшена висота */
+  color: white;
+  text-align: center;
+  display: flex;                 /* Встановити flex для вирівнювання вмісту */
+  flex-direction: column;        /* Вирівнювання елементів по вертикалі */
+}
+
+/* Блоки з водою, кроками і калоріями */
+.chart-card-water, .chart-card-steps, .chart-card-calories {
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 20px;
+  flex: 1 1 320px;               /* Більша ширина для блоків */
+  max-width: 500px;              /* Збільшена максимальна ширина */
+  height: 300px;                 /* Збільшена висота */
+  color: white;
+  text-align: center;
+  display: flex;                 /* Встановити flex для вирівнювання вмісту */
+  flex-direction: column;        /* Вирівнювання елементів по вертикалі */
+}
+
+
+/* Блок із здоров’ям */
+.health-card {
+  background: #1e1e1e;           /* Темний фон */
+  border-radius: 20px;           /* Заокруглені кути */
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4); /* Тінь */
+  margin-top: 580px;
+  height: 200px;
+}
+
+/* Секція кнопки виходу */
+.logout-section {
+  grid-column: span 2;          /* Розтягується на 2 колонки */
+  text-align: center;
+}
+
+/* Кнопка "Вийти" */
+.logout-btn {
+  background-color: #ef4444;     /* Червона кнопка */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Наведення на кнопку виходу */
+.logout-btn:hover {
+  background-color: #dc2626;     /* Темніший червоний при наведенні */
+}

@@ -1,0 +1,249 @@
+.trainings-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.about-with-image-training {
+  width: 450px; /* Зменшена ширина блоку */
+  height: 550px; /* Зменшена висота блоку */
+  margin: 40px auto 20px auto;
+  border-radius: 30px; /* Меньші округлення */
+  background: transparent;
+  box-shadow: 10px 10px 40px #4b0869, -10px -10px 40px #fda744; /* Менше тінь */
+  font-family: 'Halvar Breit Lt', sans-serif;
+  text-align: left;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.about-with-image-training:hover {
+  transform: scale(1.05);
+}
+
+.about-with-image-training img {
+  width: 450px; /* Зменшене зображення */
+  height: 430px;
+  border-radius: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; /* Додаємо ширину на всю доступну площу */
+}
+
+h3 {
+  font-size: 20px; /* Зменшений розмір шрифта */
+  color: #fda744;
+  margin-top: -10px;
+}
+
+p {
+  font-size: 16px; /* Зменшений розмір шрифта */
+}
+
+.start-button-training {
+  background-color: #4b0869;
+  color: white;
+  border: none;
+  padding: 12px 20px; /* Збільшене наповнення */
+  border-radius: 10px; /* Більш округлі кути */
+  cursor: pointer;
+  margin-top: -50px; /* Піднятий відступ відносно блоку */
+  font-size: 16px; /* Трошки більший розмір шрифта */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Додаємо плавні анімації */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь для кнопки */
+  font-family: 'Halvar Breit Lt', sans-serif;
+}
+
+.start-button-training:hover {
+  background-color: #fda744; /* Плавна зміна кольору при наведенні */
+  transform: translateY(-2px); /* Легке підняття кнопки при наведенні */
+}
+
+.start-button-training:active {
+  background-color: #d7831a; /* Темніший колір при натисканні */
+  transform: translateY(1px); /* Легке зменшення кнопки при натисканні */
+}
+
+.start-button-training:focus {
+  outline: none; /* Видаляємо стандартне виділення фокусу */
+  box-shadow: 0 0 5px 2px rgba(253, 167, 68, 0.8); /* Додаємо виділення при фокусі */
+}
+
+
+#workout-log {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+#log-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#log-list li {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.trainers-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.trainer-card {
+  width: 250px; /* Збільшено ширину картки */
+  height: 380px; /* Збільшено висоту картки */
+  text-align: center;
+  background: #000; /* Чорний фон */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px #300446, -1px -1px 20px #fa9e35;
+  transition: transform 0.3s ease;
+  color: rgb(0, 0, 0); /* Білий текст на чорному фоні */
+}
+
+.trainer-card:hover {
+  transform: scale(1.05);
+}
+
+.trainer-card img {
+  width: 220px; /* Збільшено розмір зображення */
+  height: 230px;
+  border-radius: 20px;
+  margin-bottom: 15px; /* Додано відступ для кращого розташування */
+}
+
+.trainer-card h3 {
+  font-size: 22px; /* Збільшено розмір шрифта */
+  color: #fda744;
+  margin-bottom: 10px; /* Додано відступ між заголовком та кнопкою */
+  font-family: 'Halvar Breit Lt', sans-serif;
+}
+
+.trainer-card button {
+  margin-top: 10px;
+  padding: 12px 24px; /* Збільшено розмір кнопки */
+  background-color: #4b0869;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trainer-card button:hover {
+  background-color: #fda744;
+}
+
+.calendar-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+#workout-log {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+#log-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#log-list li {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Стилі для заголовка */
+h2 {
+  font-size: 28px;
+  color: #fda744;
+  text-align: center;
+  margin-top: 150px;
+  font-family: 'Halvar Breit Lt', sans-serif;
+}
+.calendar-container {
+  margin-top: 15px;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  width: fit-content;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі react-calendar */
+.react-calendar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  max-width: 350px;
+  background: white;
+  border: none;
+  line-height: 1.125em;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.react-calendar__navigation button {
+  color: #007bff;
+  min-width: 44px;
+  background: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.react-calendar__tile {
+  padding: 10px 0;
+  text-align: center;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.react-calendar__tile:hover {
+  background: #007bff22;
+}
+
+.react-calendar__tile--active {
+  background: #007bff;
+  color: white;
+}
+
+.react-calendar__tile--now {
+  background: #ffefc2;
+}

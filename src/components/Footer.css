@@ -1,0 +1,27 @@
+/* src/styles/Home.css */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Це дозволяє футеру завжди бути внизу */
+    min-height: 100vh; /* Мінімальна висота 100% екрану */
+  }
+  
+  footer {
+    background-color: #ff8c00;
+    color: #fff;
+    text-align: center;
+    padding: 9px 0;
+    width: 100%;
+    margin-top: 50px; /* Додано для відступу від контенту */
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
