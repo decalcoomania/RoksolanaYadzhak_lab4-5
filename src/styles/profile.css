@@ -22,6 +22,7 @@
   position: relative;                  /* Потрібно для абсолютного позиціонування вкладених елементів */
   overflow: hidden;   
   margin-top: 80px;  
+  
   border-radius: 40px;      
   background-color: #fff;         /* Приховує вихід за межі */
 }
@@ -104,8 +105,8 @@
   flex-direction: row;           /* Горизонтальне розташування блоків */
   flex-wrap: nowrap;             /* Забороняє переноси, якщо немає місця */
   gap: 20px;
-  margin-top: 80px;
-  margin-left: 40px;
+  margin-top: 60px;
+  margin-left: 100px;
   justify-content: flex-start;   /* Вирівнювання елементів на ліво */
   align-items: flex-start;
   width: 100%;                   /* Забезпечує ширину */
@@ -120,7 +121,7 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   flex: 0 1 300px;               /* Мінімальна ширина 300px, але не більше */
   max-width: 500px;              /* Збільшена максимальна ширина */
-  height: 300px;                 /* Збільшена висота */
+  height: 400px;                 /* Збільшена висота */
   color: white;
   text-align: center;
   display: flex;                 /* Встановити flex для вирівнювання вмісту */
@@ -142,15 +143,6 @@
 }
 
 
-/* Блок із здоров’ям */
-.health-card {
-  background: #1e1e1e;           /* Темний фон */
-  border-radius: 20px;           /* Заокруглені кути */
-  padding: 20px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4); /* Тінь */
-  margin-top: 580px;
-  height: 200px;
-}
 
 /* Секція кнопки виходу */
 .logout-section {
@@ -168,9 +160,33 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: -4px;
+  margin-right: -380px;
 }
 
 /* Наведення на кнопку виходу */
 .logout-btn:hover {
   background-color: #dc2626;     /* Темніший червоний при наведенні */
+}
+/* Основна карта для графіка ваги */
+.chart-card-weight {
+  background-color: #000000;           /* Темне тло */
+  border-radius: 20px;                 /* Заокруглення */
+  padding: 20px;                       /* Відступи */
+  flex: 1 1 320px;                     /* Гнучкий розмір */
+  width: 700px;                    /* Максимальна ширина */
+  height: 320px;                       /* Висота блока */
+  color: white;                        /* Білий текст */
+  text-align: center;                  /* Центрування тексту */
+  display: flex;                       /* Flex-контейнер */
+  flex-direction: column;             /* Вертикальне вирівнювання */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4); /* Тінь */
+  margin-top: 530PX;
+  margin-left: -300px;
+}
+
+/* Заголовок всередині графіка ваги */
+.chart-card-weight h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }

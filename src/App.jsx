@@ -6,6 +6,7 @@ import Nutrition from './pages/Nutrition';
 import Trainings from './pages/Trainings';
 import Profile from './pages/Profile';
 import Progress from './pages/Progress'; // ✅ УВАЖНО!
+import UsersList from './UsersList'; // Імпортуємо компонент
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/trainings" element={<Trainings />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/users" element={<UsersList />} /> {/* Додаємо новий маршрут */}
       </Routes>
     </div>
   );

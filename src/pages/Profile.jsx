@@ -3,12 +3,12 @@ import '../styles/profile.css';
 import Header from '../components/Header';
 import StepsChart from '../components/StepsChart';
 import WaterChart from "../components/WaterChart";
-import CaloriesChart from "../components/CaloriesChart";
+import WeightChart from "../components/WeightChart";
+
 
 const Profile = () => {
   const [avatar, setAvatar] = useState('default-avatar.png');
 
-  // ⬇️ Завантаження зображення з localStorage при завантаженні компонента
   useEffect(() => {
     const savedAvatar = localStorage.getItem('avatar');
     if (savedAvatar) {
@@ -16,7 +16,6 @@ const Profile = () => {
     }
   }, []);
 
-  // ⬇️ Зміна фото профілю + збереження в localStorage у вигляді base64
   const handleProfilePicChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -30,7 +29,6 @@ const Profile = () => {
     }
   };
 
-  // ⬇️ Вихід з акаунту + опціонально можна не видаляти avatar
   const logout = () => {
     alert("Ви вийшли з акаунту");
     localStorage.removeItem("loggedIn");
@@ -61,14 +59,13 @@ const Profile = () => {
         <div className="charts-section">
           <StepsChart />
           <WaterChart />
-          <CaloriesChart />
+          
+
         </div>
 
-        <div className="health-card">
-          <h3>Показники здоров'я</h3>
-          <p>❤️ 121 bpm | 128 mmHg | 98 SpO₂</p>
+        <div className="chart-card-weight">
+          <WeightChart />
         </div>
-
         <div className="logout-section">
           <button className="logout-btn" onClick={logout}>Вийти</button>
         </div>
