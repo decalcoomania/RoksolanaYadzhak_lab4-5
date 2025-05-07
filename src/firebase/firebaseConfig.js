@@ -28,3 +28,7 @@ const analytics = getAnalytics(app);
 
 // Експортуємо необхідні функції для роботи з Firestore
 export { auth, db, collection, addDoc };
+
+
+
+

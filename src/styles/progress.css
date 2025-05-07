@@ -1,87 +1,113 @@
-
 .progress-container {
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .chart-section {
-    background: #000;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .chart-section h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #ffffff;
-  }
-  
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .card {
-    background-color: #f8f9fa;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .card h3 {
-    margin-bottom: 0.5rem;
-    color: #34495e;
-  }
-  
-  .card p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2ecc71;
-  }
-  
-  .trainings-section {
-    margin-top: 3rem;
-    overflow-x: auto; /* Додаємо можливість прокручувати */
-    white-space: nowrap; /* Змушуємо елементи розташовуватися в один рядок */
-    padding: 1rem 0; /* Додаємо відступи знизу та зверху */
-  }
-  
-  .training-card {
-    background-color: #f8f9fa;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 1rem; /* Відстань між картками */
-    display: inline-block; /* Застосовуємо inline-block для горизонтального розташування */
-    min-width: 220px; /* Мінімальна ширина картки */
-    text-align: center;
-  }
-  
-  .training-card h3 {
-    margin-bottom: 0.5rem;
-    color: #34495e;
-  }
-  
-  .training-card p {
-    font-size: 1rem;
-    color: #7f8c8d;
-  }
-  
-  .training-card .status {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #e74c3c;
-    transition: color 0.3s ease;
-  }
-  
-  .training-card .status.completed {
-    color: #2ecc71;
-  }
-  
-  
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.motivational-text {
+  font-size: 2rem;
+  color: #f39c12; /* Оранжевий колір */
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.chart-section {
+  background: #50065f;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stats-graph-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+.stats-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 560px;
+  height: 560px;
+}
+
+.stat-card {
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  color: #f39c12; /* Оранжевий колір */
+}
+
+.stat-card p {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Тренування */
+.trainings-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #f39c12; /* Оранжевий колір */
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.training-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.training-card:hover {
+  transform: scale(1.05);
+}
+
+.training-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.training-card h3 {
+  margin-bottom: 0.5rem;
+  color: #440b50;
+}
+
+.training-card .status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.training-card .status.completed {
+  color: #2ecc71;
+}

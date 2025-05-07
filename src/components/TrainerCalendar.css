@@ -1,89 +1,120 @@
 .calendar-container {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 400px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    border: 2px solid #007bff;
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
-    text-align: center;
+  position: relative;
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 420px;
+  max-height: 600px;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 20px;
+  border: 2px solid #00bcd4;
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+/* Заголовок по центру */
+.calendar-title {
+  margin: 10px 0 20px 0;
+  color: #0097a7;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* Хрестик тепер красиво розташований всередині */
+.cross-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #e53935;
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 2px solid #e53935;
+}
+
+.cross-icon:hover {
+  background: #e53935;
+  color: white;
+}
+
+.time-picker {
+  margin-top: 10px;
+}
+
+.time-picker select {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.confirm-btn:hover {
+  background-color: #218838;
+}
+
+.appointments {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.appointments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.appointments li {
+  background-color: #f1f9ff;
+  border: 1px solid #cce5ff;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Адаптивність */
+@media (max-width: 500px) {
+  .calendar-container {
+    padding: 10px;
+    max-width: 95%;
   }
-  
-  .calendar-container h2 {
-    margin-bottom: 10px;
-    color: #007bff;
+
+  .confirm-btn, .delete-btn {
+    width: 100%;
+    margin-top: 5px;
   }
-  
-  .time-picker {
-    margin-top: 10px;
-  }
-  
-  .time-picker select {
-    padding: 5px 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin: 10px;
-  }
-  
-  .confirm-btn {
-    background-color: #28a745;
-    color: white;
-    padding: 7px 14px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .confirm-btn:hover {
-    background-color: #218838;
-  }
-  
-  .appointments {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .appointments ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .appointments li {
-    background-color: #f1f9ff;
-    border: 1px solid #cce5ff;
-    padding: 8px;
-    margin-bottom: 6px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .delete-btn {
-    background-color: #dc3545;
-    color: white;
-    padding: 5px 8px;
-    border: none;
-    border-radius: 6px;
-    font-size: 12px;
-    cursor: pointer;
-  }
-  
-  .delete-btn:hover {
-    background-color: #c82333;
-  }
-  
-  /* Адаптивність */
-  @media (max-width: 500px) {
-    .calendar-container {
-      padding: 10px;
-      max-width: 95%;
-    }
-  
-    .confirm-btn, .delete-btn {
-      width: 100%;
-      margin-top: 5px;
-    }
-  }
-  
+}

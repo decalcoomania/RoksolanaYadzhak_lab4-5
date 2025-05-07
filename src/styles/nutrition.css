@@ -1,69 +1,111 @@
-.nutrition-container {
+body {
+  font-family: 'Halvar Breit Lt', sans-serif;
+}
+
+/* Загальний відступ вниз */
+.nutrition-wrapper {
+  margin-top: 100px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 50px;
+  color: #ff970f;
+}
+
+/* Кнопки днів тижня */
+.days-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* щоб не ламалось на маленьких екранах */
+  margin: 30px 0;
+}
+
+.day-button {
+  width: 120px; /* ширші кнопки */
+  padding: 12px 0;
+  border: 2px solid #ff970f;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #311a04; /* одразу темний текст */
+  transition: all 0.3s;
+}
+
+.day-button:hover {
+  background-color: #e6f4ea;
+}
+
+.day-button.active {
+  background-color: #ff970f;
+  color: white;
+  border-color: #ff970f;
+}
+
+/* Блок страв */
+.meals-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  margin-top: 170px;
-  margin-right: 700px;
+  gap: 50px;
+  margin-top: 40px;
 }
 
-.nutrition-image {
-  width: 500px;
-  height: auto;
-}
-
-.button-container {
+/* Одна страва */
+.meal-card {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px; /* Відступ між елементами */
-  margin-top: -830px;
-  margin-right: 700px;
-  }
+  gap: 30px;
+  width: 800px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.meal-photo {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+.meal-info-block {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* додано для центрування тексту */
   
-  .arrow {
-    width: 40px;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .arrow:hover {
-    transform: scale(1.1);
-  }
-  
-  .nutrition-button-image {
-    width: 150px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .nutrition-button-image:hover {
-    transform: scale(1.05);
-  }
-  
-  .photos-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Відступ між контейнерами */
-    margin-top: 22px;
-    margin-left: 250px;
-  }
-  
-  .photo-container {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 250px;
-  }
-  
-  .nutrition-extra-photo {
-    width: 510px;
-    height: auto;
-    display: block;
-  }
-  
-  
+}
+
+
+.meal-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.meal-card li {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.meal-card li strong {
+  margin-right: 10px;
+  color: #000;
+}
+.meal-name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #25073d;
+  text-align: center;
+}
+
