@@ -1,5 +1,6 @@
+// firebaseConfig.js
 const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json'); // Твій JSON ключ
+const serviceAccount = require('./serviceAccountKey.json'); // ключ з Firebase
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)

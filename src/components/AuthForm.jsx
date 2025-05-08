@@ -11,7 +11,6 @@ import {
 } from 'firebase/auth';
 import { saveUserData } from '../firebase/firebaseOperations';
 
-// Імпорт іконок
 import googleIcon from '../assets/google.png';
 import facebookIcon from '../assets/facebook.png';
 
@@ -25,10 +24,8 @@ const AuthForm = () => {
   });
   const [isOpen, setIsOpen] = useState(true);
 
-  // Реєстрація/Вхід по email
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       if (isRegistering) {
         const userCredential = await createUserWithEmailAndPassword(auth, formData.username, formData.password);
@@ -54,8 +51,8 @@ const AuthForm = () => {
     }
   };
 
-  // Вхід через Google
-  const handleGoogleLogin = async () => {
+  const handleGoogleLogin = async (e) => {
+    e.stopPropagation();
     try {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
@@ -74,8 +71,8 @@ const AuthForm = () => {
     }
   };
 
-  // Вхід через Facebook
-  const handleFacebookLogin = async () => {
+  const handleFacebookLogin = async (e) => {
+    e.stopPropagation();
     try {
       const provider = new FacebookAuthProvider();
       const result = await signInWithPopup(auth, provider);
@@ -105,12 +102,6 @@ const AuthForm = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <h2>{isRegistering ? 'Реєстрація' : 'Увійти'}</h2>
-
-        {/* Іконки Google + Facebook */}
-        <div className="social-icons">
-          <img src={googleIcon} alt="Google" className="custom-icon" onClick={handleGoogleLogin} />
-          <img src={facebookIcon} alt="Facebook" className="custom-icon" onClick={handleFacebookLogin} />
-        </div>
 
         <form onSubmit={handleSubmit} className="auth-form">
           {isRegistering && (
@@ -149,9 +140,21 @@ const AuthForm = () => {
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
             />
           </div>
+
+          {/* СОЦІАЛЬНІ ІКОНКИ НАД КНОПКОЮ */}
+          <div className="social-icons">
+            <button type="button" className="icon-btn" onClick={handleGoogleLogin}>
+              <img src={googleIcon} alt="Google" className="custom-icon" />
+            </button>
+            <button type="button" className="icon-btn" onClick={handleFacebookLogin}>
+              <img src={facebookIcon} alt="Facebook" className="custom-icon" />
+            </button>
+          </div>
+
           <button type="submit" className="submit-btn">
             {isRegistering ? 'Зареєструватись' : 'Увійти'}
           </button>
+
           <p onClick={() => setIsRegistering(!isRegistering)} className="toggle-link">
             {isRegistering ? (
               <>Уже маєш акаунт? <a>Увійти</a></>

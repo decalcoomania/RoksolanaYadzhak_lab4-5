@@ -15,7 +15,6 @@
   display: flex;
 }
 
-/* === Базовий стиль контейнера === */
 .auth-container {
   background-color: white;
   padding: 30px;
@@ -24,39 +23,31 @@
   width: 100%;
   max-width: 300px;
   text-align: center;
-  
 }
 
-/* === Вхід === */
 .auth-container.auth-login {
   border: 2px solid #f57c00;
-  height: 380px;
+  height: 430px; /* трішки збільшено для розміщення іконок */
 }
 
-/* === Реєстрація === */
 .auth-container.auth-register {
   border: 2px solid #f57c00;
-  height: 550px;
+  height: 600px; /* трішки збільшено */
 }
 
-/* Заголовок */
-/* Заголовок */
 .auth-container h2 {
   font-size: 28px;
   color: #f57c00;
-  margin-bottom: 20px; /* було 10px */
-  margin-top: -1px;    /* додано для підняття вгору */
+  margin-bottom: 20px;
+  margin-top: -1px;
 }
 
-
-/* Форма */
 .auth-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Група вводу */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -87,7 +78,6 @@
   box-shadow: 0 0 0 2px #ff9900;
 }
 
-/* Кнопка */
 .submit-btn {
   width: 100%;
   padding: 12px;
@@ -104,7 +94,6 @@
   background-color: #e67c00;
 }
 
-/* Посилання */
 .toggle-link {
   margin-top: 15px;
   font-size: 14px;
@@ -121,12 +110,21 @@
 .toggle-link a:hover {
   text-decoration: underline;
 }
-/* Іконки соцмереж */
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .social-icons {
   display: flex;
+  gap: 10px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 20px 0 10px;
 }
+
 
 .custom-icon {
   width: 40px;
@@ -139,3 +137,14 @@
 .custom-icon:hover {
   transform: scale(1.1);
 }
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #db4437;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
