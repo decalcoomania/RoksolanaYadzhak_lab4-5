@@ -4,10 +4,11 @@ import Header from '../components/Header';
 import StepsChart from '../components/StepsChart';
 import WaterChart from "../components/WaterChart";
 import WeightChart from "../components/WeightChart";
-
+import { useNavigate } from 'react-router-dom';  // Для перенаправлення
 
 const Profile = () => {
   const [avatar, setAvatar] = useState('default-avatar.png');
+  const navigate = useNavigate();  // Хук для навігації
 
   useEffect(() => {
     const savedAvatar = localStorage.getItem('avatar');
@@ -30,9 +31,15 @@ const Profile = () => {
   };
 
   const logout = () => {
-    alert("Ви вийшли з акаунту");
+    // Очистити інформацію про користувача з localStorage
     localStorage.removeItem("loggedIn");
-    window.location.href = "index.html";
+    localStorage.removeItem("avatar");  // Якщо потрібно видаляти також аватар
+
+    // Повідомлення про вихід
+    alert("Ви вийшли з акаунту");
+
+    // Перенаправлення на сторінку входу або головну
+    navigate('/login');  // Або '/home', якщо у вас є домашня сторінка
   };
 
   return (
@@ -59,8 +66,6 @@ const Profile = () => {
         <div className="charts-section">
           <StepsChart />
           <WaterChart />
-          
-
         </div>
 
         <div className="chart-card-weight">

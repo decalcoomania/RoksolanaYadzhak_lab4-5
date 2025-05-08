@@ -81,23 +81,6 @@ p {
 }
 
 
-#workout-log {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-}
-
-#log-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#log-list li {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
 .trainers-container {
   display: flex;
   justify-content: space-around;
@@ -161,23 +144,6 @@ p {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   z-index: 1000;
-}
-
-#workout-log {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-}
-
-#log-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#log-list li {
-  font-size: 16px;
-  margin: 10px 0;
 }
 
 /* Стилі для заголовка */

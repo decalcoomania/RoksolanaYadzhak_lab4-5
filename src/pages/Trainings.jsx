@@ -87,16 +87,6 @@ const Training = () => {
                 </div>
             )}
 
-            {/* Журнал тренувань */}
-            <section id="workout-log">
-                <h3>Журнал тренувань</h3>
-                <ul id="log-list">
-                    {workoutLog.map((log, index) => (
-                        <li key={index}>{log}</li>
-                    ))}
-                </ul>
-            </section>
-
             <Footer />
         </div>
     );

@@ -22,7 +22,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5",
-    "recharts": "^2.15.2",
+    "recharts": "^2.15.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.17",
     "web-vitals": "^2.1.4"
@@ -69,5 +69,4 @@
     "url": "https://github.com/decalcoomania/RoksolanaYadzhak_lab4-5/issues"
   },
   "homepage": "."
-
 }

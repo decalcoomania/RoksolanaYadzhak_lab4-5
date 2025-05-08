@@ -1,88 +1,150 @@
-/* Модальне вікно - затемнення фону */
 .auth-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* напівпрозорий фон */
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  .auth-overlay.open {
-    display: flex;
-  }
-  
-  /* Контейнер для форми */
-  .auth-container {
-    background-color: rgb(37, 11, 39);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    z-index: 10000;
-  }
-  
-  /* Загальний стиль для форми */
-  .auth-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Стилі для полів вводу */
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-group label {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #ffffff;
-  }
-  
-  .input-group input {
-    width: 300px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  .input-group input:focus {
-    border-color: #5cb85c;
-    outline: none;
-  }
-  
-  /* Кнопка */
-  .submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .submit-btn:hover {
-    background-color: rgb(238, 143, 0);
-  }
-  
-  /* Посилання для переключення між реєстрацією і входом */
-  .toggle-link {
-    text-align: center;
-    margin-top: 15px;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  
-  .toggle-link:hover {
-    text-decoration: underline;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.auth-overlay.open {
+  display: flex;
+}
+
+.auth-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.auth-container.auth-login {
+  border: 2px solid #f57c00;
+  height: 430px; /* трішки збільшено для розміщення іконок */
+}
+
+.auth-container.auth-register {
+  border: 2px solid #f57c00;
+  height: 600px; /* трішки збільшено */
+}
+
+.auth-container h2 {
+  font-size: 28px;
+  color: #f57c00;
+  margin-bottom: 20px;
+  margin-top: -1px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-bottom: 15px;
+  margin-right: 22px;
+}
+
+.input-group label {
+  text-align: left;
+  font-size: 14px;
+  color: #f57c00;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff9900;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #e67c00;
+}
+
+.toggle-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.toggle-link a {
+  color: #ff9900;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.toggle-link a:hover {
+  text-decoration: underline;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0 10px;
+}
+
+
+.custom-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.custom-icon:hover {
+  transform: scale(1.1);
+}
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #db4437;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+

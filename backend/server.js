@@ -1,19 +1,18 @@
+// server.js
 const express = require('express');
 const cors = require('cors');
+const db = require('./firebaseConfig'); // firestore db
 const app = express();
-const db = require('./firebaseConfig'); // підключення до Firestore
 const PORT = process.env.PORT || 5000;
 
-
-// Середовища
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Маршрут для додавання користувача (логін: email + password)
+// POST - додати користувача
 app.post('/api/users', async (req, res) => {
   try {
     const { email, password } = req.body;
-
     if (!email || !password) {
       return res.status(400).send('Email and password are required');
     }
@@ -26,7 +25,21 @@ app.post('/api/users', async (req, res) => {
   }
 });
 
-// Запуск сервера
+// GET - отримати всіх користувачів
+app.get('/api/users', async (req, res) => {
+  try {
+    const snapshot = await db.collection('users').get();
+    const users = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    res.status(200).json(users);
+  } catch (error) {
+    console.error('Error getting users:', error);
+    res.status(500).send(error.message);
+  }
+});
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

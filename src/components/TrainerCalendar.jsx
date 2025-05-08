@@ -1,4 +1,3 @@
-// TrainerCalendar.jsx
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -10,10 +9,10 @@ const TrainerCalendar = ({ trainerName }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState('');
   const [appointments, setAppointments] = useState([]);
+  const [isVisible, setIsVisible] = useState(true); // Сховування календаря
 
   const storageKey = `appointments-${trainerName}`;
 
-  // Завантаження з localStorage
   useEffect(() => {
     const saved = localStorage.getItem(storageKey);
     if (saved) {
@@ -21,7 +20,6 @@ const TrainerCalendar = ({ trainerName }) => {
     }
   }, [storageKey]);
 
-  // Збереження в localStorage
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(appointments));
   }, [appointments, storageKey]);
@@ -51,46 +49,55 @@ const TrainerCalendar = ({ trainerName }) => {
   };
 
   return (
-    <div className="calendar-container">
-      <h2>{trainerName}</h2>
-      <Calendar
-        onChange={setSelectedDate}
-        value={selectedDate}
-      />
+    <>
+      {isVisible && (
+        <div className="calendar-container">
+          {/* Хрестик */}
+          <div className="cross-icon" onClick={() => setIsVisible(false)}>×</div>
 
-      {selectedDate && (
-        <div className="time-picker">
-          <label>Оберіть час:</label>
-          <select value={selectedTime} onChange={(e) => setSelectedTime(e.target.value)}>
-            <option value="">-- Час --</option>
-            <option value="08:00">08:00</option>
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="13:00">13:00</option>
-            <option value="14:00">14:00</option>
-            <option value="15:00">15:00</option>
-          </select>
+          {/* Заголовок по центру */}
+          <h2 className="calendar-title">Оберіть дату для запису</h2>
 
-          <button className="confirm-btn" onClick={handleConfirm}>Підтвердити запис</button>
+          <Calendar
+            onChange={setSelectedDate}
+            value={selectedDate}
+          />
+
+          {selectedDate && (
+            <div className="time-picker">
+              <label>Оберіть час:</label>
+              <select value={selectedTime} onChange={(e) => setSelectedTime(e.target.value)}>
+                <option value="">-- Час --</option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+              </select>
+
+              <button className="confirm-btn" onClick={handleConfirm}>Підтвердити запис</button>
+            </div>
+          )}
+
+          <div className="appointments">
+            <h4>Ваші записи:</h4>
+            <ul>
+              {appointments.map((appt, i) => (
+                <li key={i}>
+                  {appt.date} о {appt.time}
+                  <button className="delete-btn" onClick={() => handleDelete(i)}>Видалити</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <ToastContainer position="top-center" />
         </div>
       )}
-
-      <div className="appointments">
-        <h4>Ваші записи:</h4>
-        <ul>
-          {appointments.map((appt, i) => (
-            <li key={i}>
-              {appt.date} о {appt.time}
-              <button className="delete-btn" onClick={() => handleDelete(i)}>Видалити</button>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <ToastContainer position="top-center" />
-    </div>
+    </>
   );
 };
 
